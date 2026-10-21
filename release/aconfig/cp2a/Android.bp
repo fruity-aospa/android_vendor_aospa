@@ -1,0 +1,11 @@
+//
+// SPDX-FileCopyrightText: 2025 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+aconfig_value_set {
+    name: "aconfig_value_set-aospa-cp2a",
+    srcs: [
+        "*/Android.bp",
+    ],
+}
