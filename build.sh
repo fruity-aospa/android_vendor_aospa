@@ -102,6 +102,11 @@ if [ ! -d "$DIR_ROOT/vendor/aospa" ]; then
         exit 1
 fi
 
+# Default to vendor/aospa-priv/keys if available and not explicitly specified
+if [ -z "${KEY_MAPPINGS}" ] && [ -d "$DIR_ROOT/vendor/aospa-priv/keys" ]; then
+    KEY_MAPPINGS="$DIR_ROOT/vendor/aospa-priv/keys"
+fi
+
 # Setup AOSPA variant if specified
 if [ $AOSPA_VARIANT ]; then
     AOSPA_VARIANT=`echo $AOSPA_VARIANT |  tr "[:upper:]" "[:lower:]"`
@@ -252,6 +257,9 @@ elif [ "${KEY_MAPPINGS}" ]; then
         aospa-$AOSPA_VERSION.zip
 
     checkExit
+
+    cp -f aospa-$AOSPA_VERSION.zip "$OUT"/aospa-$AOSPA_VERSION.zip 2>/dev/null || true
+    echo "Package Complete: aospa-$AOSPA_VERSION.zip ($OUT/aospa-$AOSPA_VERSION.zip)"
 
     if [ "$DELTA_TARGET_FILES" ]; then
         # die if base target doesn't exist
