@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Paranoid Android
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest>
+  <!-- Device & Vendor Dependencies -->
+  <project path="device/nothing/asteroids" name="android_device_nothing_asteroids" remote="fru" revision="calcite-6.1" />
+  <project path="vendor/nothing/asteroids" name="proprietary_vendor_nothing_asteroids" remote="fru" revision="calcite-6.1" />
+  <project path="hardware/nothing" name="android_hardware_nothing" remote="fru" revision="calcite-6.1" />
+
+  <!-- Kernel Dependencies -->
+  <project path="kernel/nothing/sm7635" name="android_kernel_nothing_sm7635" remote="fru" revision="calcite-6.1" />
+  <project path="kernel/nothing/sm7635-modules" name="android_kernel_nothing_sm7635-modules" remote="fru" revision="calcite-6.1" />
+  <project path="kernel/nothing/sm7635-devicetrees" name="android_kernel_nothing_sm7635-devicetrees" remote="fru" revision="calcite-6.1" />
+
+  <!-- Audio & Display Hardware HALs -->
+  <project path="hardware/qcom/audio" name="AOSPA/android_hardware_qcom_audio" remote="github" revision="calcite-8650" />
+  <project path="hardware/qcom-caf/sm8650/audio/agm" name="AOSPA/android_vendor_qcom_opensource_agm" remote="github" revision="calcite-8650" />
+  <project path="hardware/qcom-caf/sm8650/audio/graphservices" name="AOSPA/android_vendor_qcom_opensource_audioreach-graphservices" remote="github" revision="calcite-8650" />
+  <project path="hardware/qcom-caf/sm8650/audio/pal" name="android_vendor_qcom_opensource_arpal-lx" remote="fru" revision="calcite-8650" />
+  <project path="hardware/qcom-caf/sm8650/audio/st-hal-ar" name="android_vendor_qcom_opensource_audio-hal_st-hal-ar" remote="fru" revision="calcite-8650" />
+  <project path="hardware/qcom-caf/sm8650/display" name="android_hardware_qcom_display" remote="fru" revision="calcite-caf-sm8650">
+    <linkfile src="os_layers" dest="display/sm8650" />
+  </project>
+  <project path="hardware/qcom-caf/sm8650/dataipa" name="android_vendor_qcom_opensource_dataipa" remote="fru" revision="calcite-caf-sm8650" />
+  <project path="hardware/qcom-caf/sm8650/data-ipa-cfg-mgr" name="android_vendor_qcom_opensource_data-ipa-cfg-mgr" remote="fru" revision="calcite-caf-sm8650" />
+  <project path="hardware/dolby" name="hardware_dolby" remote="fru" revision="calcite-6.1" />
+</manifest>
