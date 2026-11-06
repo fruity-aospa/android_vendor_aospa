@@ -144,6 +144,7 @@ PRODUCT_PACKAGES += ParanoidHub
 endif
 
 # Paranoid Sense
+ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
 PRODUCT_PACKAGES += \
     ParanoidSense
 
@@ -153,6 +154,7 @@ PRODUCT_COPY_FILES += \
 # Enable Sense service for 64-bit only
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.face.sense_service=$(TARGET_SUPPORTS_64_BIT_APPS)
+endif
 
 # Permissions
 PRODUCT_COPY_FILES += \
